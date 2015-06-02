@@ -3,5 +3,12 @@ source "http://rubygems.org/"
 
 gem 'sinatra'
 
-#Allows us to dynamically reload
+# DB and ORM
+gem "sinatra-activerecord"
+gem 'activerecord'
+gem 'sqlite3'
+
+# Allows us to dynamically reload
 gem 'rerun'
+
+gem 'rake'
