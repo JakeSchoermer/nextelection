@@ -6,30 +6,35 @@
 <div class="row">
   <div class="large-12 columns">
     
-		<table>
+		<table id="election_table"style="width:100%;">
 			<thead>
 				<tr>
 					<th>Jurisdiction</th>
 					<th>Tier</th>
 					<th>Next Election</th>
+					<th>Fixed Term?</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @jurisdictions.each do |jurisdiction| %>
-		  		<tr>
+					<% if !jurisdiction.elections.nil? %>
+						<% election = Election.where("jurisdiction_id = #{jurisdiction.id}").order(election_date: :asc).last %>
+		  		<% end %>	
+					<tr>
 						<td><%= jurisdiction.name %></td>
 						<td><%= jurisdiction.tier %></td>
+						
+						<td>
+							<%= election.election_date %>
+						</td>
 						<% if !jurisdiction.elections.nil? %>
-							<% puts "============= "%>
-							<% puts "============= "%>
-							<% puts jurisdiction.elections.first %>
-							<% puts "============= "%>
-							<% puts "============= "%>
-							<td><%= jurisdiction.elections.first %></td>
+							<td><%= election.fixed_term?.yesno %></td>
 						<% end %>
 					</tr>
 				<% end %>
 			</thead>
 		</table>
+		
+
 	</div>
 </div>

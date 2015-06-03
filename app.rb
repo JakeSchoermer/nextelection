@@ -37,3 +37,15 @@ end
 class Election < ActiveRecord::Base
   belongs_to :jurisdiction
 end
+
+class TrueClass
+  def yesno
+    "Yes"
+  end
+end
+
+class FalseClass
+  def yesno
+    "No"
+  end
+end
