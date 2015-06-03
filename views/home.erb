@@ -10,7 +10,8 @@
 			<thead>
 				<tr>
 					<th>Jurisdiction</th>
-					<th></th>
+					<th>Tier</th>
+					<th>Next Election</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,6 +19,14 @@
 		  		<tr>
 						<td><%= jurisdiction.name %></td>
 						<td><%= jurisdiction.tier %></td>
+						<% if !jurisdiction.elections.nil? %>
+							<% puts "============= "%>
+							<% puts "============= "%>
+							<% puts jurisdiction.elections.first %>
+							<% puts "============= "%>
+							<% puts "============= "%>
+							<td><%= jurisdiction.elections.first %></td>
+						<% end %>
 					</tr>
 				<% end %>
 			</thead>

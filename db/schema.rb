@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150602150113) do
     t.date    "election_date"
     t.boolean "fixed_date"
     t.text    "notes"
-    t.integer "instructor_id"
+    t.integer "jurisdiction_id"
   end
 
   create_table "jurisdictions", force: :cascade do |t|
