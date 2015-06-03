@@ -32,6 +32,10 @@ nt_2016 = Election.create! election_date: Date.new(2016,8,27), fixed_date: true
 nt.elections << nt_2016
 nt.save!
 
+qld_2018 = Election.create! election_date: Date.new(2018,03,27), fixed_date: false
+qld.elections << qld_2018
+qld.save!
+
 sa_2018 = Election.create! election_date: Date.new(2018,03,27), fixed_date: true
 sa.elections << sa_2018
 sa.save!
