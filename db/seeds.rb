@@ -1,6 +1,7 @@
 require './app'
 
 Jurisdiction.delete_all
+Election.delete_all
 
 #Jurisdictions
 
@@ -13,3 +14,5 @@ sa = Jurisdiction.create! name: "South Australia", abbreviation: "SA", tier: "St
 tas = Jurisdiction.create! name: "Tasmania", abbreviation: "TAS", tier: "State/Territory"
 vic = Jurisdiction.create! name: "Victoria", abbreviation: "VIC", tier: "State/Territory"
 wa = Jurisdiction.create! name: "Western Australia", abbreviation: "WA", tier: "State/Territory"
+
+#Elections

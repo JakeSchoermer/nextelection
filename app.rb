@@ -1,7 +1,10 @@
 require 'sinatra/base'
 require "sinatra/activerecord"
+require 'rack-mini-profiler'
 
 class NextElection < Sinatra::Base    
+  
+  use Rack::MiniProfiler
   
   #Set Folder Structure  
   set :public_folder, 'assets'
@@ -13,6 +16,7 @@ class NextElection < Sinatra::Base
   #Routes
   
   get '/' do
+    @jurisdictions = Jurisdiction.all
     erb :home
   end
   
@@ -27,7 +31,9 @@ end
 #Models
 
 class Jurisdiction < ActiveRecord::Base
+  has_many :elections
 end
 
 class Election < ActiveRecord::Base
+  belongs_to :jurisdiction
 end

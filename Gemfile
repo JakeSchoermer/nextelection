@@ -12,3 +12,7 @@ gem 'sqlite3'
 gem 'rerun'
 
 gem 'rake'
+
+group :development do
+  gem 'rack-mini-profiler'
+end

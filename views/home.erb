@@ -1,1 +1,26 @@
-<h1>Upcoming Elections</h1>
+<div class="row">
+  <div class="large-12 columns">
+    <h1 style="text-align:center">Upcoming Elections</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    
+		<table>
+			<thead>
+				<tr>
+					<th>Jurisdiction</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @jurisdictions.each do |jurisdiction| %>
+		  		<tr>
+						<td><%= jurisdiction.name %></td>
+						<td><%= jurisdiction.tier %></td>
+					</tr>
+				<% end %>
+			</thead>
+		</table>
+	</div>
+</div>
