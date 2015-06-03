@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602142308) do
+ActiveRecord::Schema.define(version: 20150602150113) do
+
+  create_table "elections", force: :cascade do |t|
+    t.date    "election_date"
+    t.boolean "fixed_date"
+    t.text    "notes"
+  end
 
   create_table "jurisdictions", force: :cascade do |t|
     t.string "name"

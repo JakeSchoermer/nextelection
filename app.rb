@@ -28,3 +28,6 @@ end
 
 class Jurisdiction < ActiveRecord::Base
 end
+
+class Election < ActiveRecord::Base
+end
